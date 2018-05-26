@@ -1,0 +1,11 @@
+
+#the variables (x,y,h) are x and y coord. in the plane
+#with h for height
+#x y h
+.1 .1 .0019
+.2 .1 .0038
+.3 .1 .0075
+.4 .1 .0145
+.5 .1 .0276
+.6 .1 .0516
+.7 .1 .0944

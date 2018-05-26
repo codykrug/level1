@@ -30,7 +30,9 @@ numbers = [1,4,2,5,3,6]
 numberssorted = sorted(numbers)
 
 
-'''assign a statement to an object, then print the 3rd letter only, then the 1st through the 3rd, check the length of the statement, add two statements together, print a statements multiple times with line breaks'''
+'''Question 5: 
+
+assign a statement to an object, then print the 3rd letter only, then the 1st through the 3rd, check the length of the statement, add two statements together, print a statements multiple times with line breaks'''
 
 rick = "Hello World"
 rick[2]
@@ -41,7 +43,9 @@ second = "world"
 Hello = first + second
 print 3 *  ("This can be repeated \n")
 
-'''strip the words from a statements'''
+'''Question 6:
+
+strip the words from a statements'''
 
 statement = "this is a statement"
 statement.split()
@@ -96,4 +100,32 @@ def Factorial(n):
 
 
 
-  
+import os
+
+out = open("testData.dat", "w")
+out.write(
+'''
+#the variables (x,y,h) are x and y coord. in the plane
+#with h for height
+#x y h
+.1 .1 .0019
+.2 .1 .0038
+.3 .1 .0075
+.4 .1 .0145
+.5 .1 .0276
+.6 .1 .0516
+.7 .1 .0944
+''')
+out.close()
+
+'''Question 7:
+read testData.dat and output a new text file with analysis using numpy
+'''
+
+import numpy as np
+x, y, h = np.loadtxt('testdata.dat', unpack=True)
+d = np.sqrt(x*x, y*y)
+dataout = np.column_stack((d,h))
+np.savetxt('output.dat', dataout, fmt=('%15.10f, %10.4f'),
+              header='created by Name here')
+
